@@ -1,3 +1,6 @@
-module.exports = {
-  mongoURI: `mongodb://admin:admin@ds259079.mlab.com:59079/raymondreact`
-};
+if(process.env.NODE_ENV==='production'){
+  module.exports=require('./keys_prod');
+}
+else{
+  module.exports=require('./keys_dev');
+}
